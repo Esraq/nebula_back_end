@@ -20,11 +20,6 @@ class RegisterController extends BaseController
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required',
-            'role' => 'required',
-            'status'=>'required',
-            'image'=>'required',
-            'address'=>'required',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ]);
@@ -40,6 +35,7 @@ class RegisterController extends BaseController
         $success['name'] =  $user->name;
    
         return $this->sendResponse($success, 'User register successfully.');
+        
     }
    
     /**
